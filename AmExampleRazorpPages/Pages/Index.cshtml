@@ -10,12 +10,23 @@
 
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 
-    <form>
+    <form method="post">
         <p>
-            <input type="text" />
+            <label>Full Name:</label>
+            <input type="text" asp-for="Fullname" required="true"/>
         </p>
         <p>
-            <input type="email" />
+            <label>Email Address: </label>
+            <input type="email" required="true" />
+        </p>
+        <p>
+            <button type="submit" >Save</button>
         </p>
     </form>
+    <p>
+        @if(Model.Email.Length < 3)
+        {
+            <span>Please enter an email address</span>
+        }
+    </p>
 </div>

@@ -5,7 +5,9 @@ namespace AmExampleRazorpPages.Pages
 {
     public class IndexModel : PageModel
     {
+        [BindProperty]
         public string Fullname { get; set; }
+        [BindProperty]
         public string Email { get; set; }
 
         private readonly ILogger<IndexModel> _logger;
@@ -16,6 +18,11 @@ namespace AmExampleRazorpPages.Pages
         }
 
         public void OnGet()
+        {
+            Fullname = "Derek Peacock";
+        }
+
+        public void OnPost()
         {
 
         }
